@@ -1,0 +1,6 @@
+.git
+.project
+.settings
+.classpath
+.springBeans
+logs/
