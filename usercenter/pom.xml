@@ -26,13 +26,5 @@
 
 	<build>
 		<finalName>usercenter</finalName>
-		<plugins>
-			<!-- spring boot -->
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>${org.springframework.boot.version}</version>
-			</plugin>
-		</plugins>
 	</build>
 </project>
