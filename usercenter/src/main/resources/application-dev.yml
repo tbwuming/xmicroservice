@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+# https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#production-ready-endpoints
+# actuator 开启所有监控
+# management.endpoint.info.enabled=true 开启info监控
+# management.endpoint.shutdown.enabled=true 开启shutdown
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          "*"
+          
