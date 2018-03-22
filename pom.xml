@@ -74,13 +74,7 @@
 				<artifactId>logback-core</artifactId>
 				<version>1.2.1</version>
 			</dependency>
-
-			<!-- spring-boot-starter-actuator 需要 -->
-			<dependency>
-	            <groupId>org.hdrhistogram</groupId>
-	            <artifactId>HdrHistogram</artifactId>
-	            <version>2.1.8</version>
-	        </dependency>
+			
 		</dependencies>
 	</dependencyManagement>
 
