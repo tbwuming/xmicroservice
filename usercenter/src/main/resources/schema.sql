@@ -15,7 +15,7 @@ CREATE TABLE `user` (
   `name` varchar(100) NOT NULL,
   `age` int(11) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
-  `status` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `status` tinyint(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `idx_name` (`name`),
   FULLTEXT KEY `idx_address` (`address`)
@@ -40,7 +40,7 @@ CREATE TABLE `hotel` (
   `name` varchar(100) NOT NULL,
   `telephone` varchar(20) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
-  `status` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `status` tinyint(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `idx_name` (`name`),
   FULLTEXT KEY `idx_address` (`address`)
