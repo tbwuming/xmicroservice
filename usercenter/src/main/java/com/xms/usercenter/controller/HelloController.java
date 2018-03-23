@@ -1,4 +1,4 @@
-package com.usercenter.controller;
+package com.xms.usercenter.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

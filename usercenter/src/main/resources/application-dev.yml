@@ -11,4 +11,18 @@ management:
       exposure:
         include:
           "*"
-          
+
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://127.0.0.1:3306/xmicroservice?zeroDateTimeBehavior=convertToNull&useSSL=false
+      username: root
+      password: rootroot
+      driver-class-name: com.mysql.jdbc.Driver
+         
+mybatis:
+  config-location: classpath:com/xms/usercenter/mapper/mybatis-config.xml    
+#  mapper-locations:
+#  - classpath:com/xms/usercenter/mapper/*.xml
+  
+       
