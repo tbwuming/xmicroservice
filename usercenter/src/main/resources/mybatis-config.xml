@@ -30,8 +30,10 @@
 		<typeAlias alias="User" type="com.xms.usercenter.domain.User" />
 	</typeAliases>
 	
-	<mappers>
+	<!--  已经在application.yml中指定mapper-locations了，这里再指定就会报如下错误 -->
+	<!--  Mapped Statements collection already contains value for com.xms.usercenter.mapper.UserMapper.selectUserById -->
+	<!-- <mappers>
 		<package name="com.xms.usercenter.mapper"/>
-	</mappers>
+	</mappers> -->
 
 </configuration>
