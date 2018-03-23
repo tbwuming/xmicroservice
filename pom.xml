@@ -101,6 +101,12 @@
 				<artifactId>druid-spring-boot-starter</artifactId>
 				<version>1.1.9</version>
 			</dependency>
+			<!-- 访问不存在的路径报java.lang.NoClassDefFoundError: org/HdrHistogram/WriterReaderPhaser -->
+			<dependency>
+	            <groupId>org.hdrhistogram</groupId>
+	            <artifactId>HdrHistogram</artifactId>
+	            <version>2.1.8</version>
+	        </dependency>
 		</dependencies>
 	</dependencyManagement>
 

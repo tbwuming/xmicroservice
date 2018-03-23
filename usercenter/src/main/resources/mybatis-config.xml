@@ -29,5 +29,9 @@
 
 		<typeAlias alias="User" type="com.xms.usercenter.domain.User" />
 	</typeAliases>
+	
+	<mappers>
+		<package name="com.xms.usercenter.mapper"/>
+	</mappers>
 
 </configuration>
