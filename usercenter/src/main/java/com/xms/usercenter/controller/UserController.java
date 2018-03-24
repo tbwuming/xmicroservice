@@ -27,16 +27,18 @@ public class UserController {
 	 * http://localhost:8081/xms/v1/users/5
 	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public User getUserById(@PathVariable Long id) {
-		return userService.getUserById(id);
+	public ResultDO<User> getUserById(@PathVariable Long id) {
+		User user = userService.getUserById(id);
+		return new ResultDO<User>(user);
 	}
 
 	/**
 	 * http://localhost:8081/xms/v1/users/name/xxoo
 	 */
 	@RequestMapping(value = "/name/{name}", method = RequestMethod.GET)
-	public List<User> getUserByName(@PathVariable String name) {
-		return userService.getUserByName(name);
+	public ResultDO<List<User>> getUserByName(@PathVariable String name) {
+		List<User> userList = userService.getUserByName(name);
+		return new ResultDO<List<User>>(userList);
 	}
 
 	/**
