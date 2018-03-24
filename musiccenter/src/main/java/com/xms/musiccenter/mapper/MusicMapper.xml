@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xms.musiccenter.mapper.MusicMapper">
+
+	<select id="selectMusicById" parameterType="Long" resultType="Music">
+		select * from music where
+		id = #{id}
+	</select>
+
+	<select id="selectMusicByName" parameterType="String" resultType="Music">
+		select * from music
+		where name = #{name}
+	</select>
+
+	<insert id="insertMusic" parameterType="Music" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into music (name, singer, company, features, gmt_create, gmt_modified)
+		values
+		(#{name}, #{singer}, #{company}, #{features}, now(), now())
+	</insert>
+
+	<update id="updateMusic">
+		update music set
+			gmt_modified = now()
+			<if test="name != null">,name = #{name}</if>
+			<if test="singer != null">,singer = #{singer}</if>
+			<if test="company != null">,company = #{company}</if>
+			<if test="features != null">,features = #{features}</if>
+		where id = #{id}
+	</update>
+</mapper>
