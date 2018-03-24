@@ -45,7 +45,10 @@ mybatis:
   mapper-locations:
   - classpath:com/xms/usercenter/mapper/**Mapper.xml
 
-
+# springboot 缺省就会找logback-spring.xml文件，这里直接指定了，path最好指定绝对路径
+logging:
+  config: classpath:logback-spring.xml
+  path: E:/project/eclipse-workspace/xmicroservice/usercenter/logs
 
 
 

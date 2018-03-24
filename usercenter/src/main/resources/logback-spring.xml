@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/2002/xmlspec/dtd/2.10/xmlspec.dtd">
+<configuration scan="true">
+	<!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径 -->
+	<!-- 在application.yml中指定了logging.path，因此在下述配置文件中可以直接指定${LOG_PATH}作为日志输出目录 -->
+	<!-- <property name="LOG_ROOT_HOME" value="${logging.path}" /> -->
+
+	<!-- 控制台输出 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36}\(%L\) - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="rootAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PATH}/usercenter.log</file>
+		<append>true</append>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/default.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36}\(%L\) - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="mapperAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PATH}/mapper.log</file>
+		<append>true</append>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/mapper.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36}\(%L\) - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="daoAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PATH}/dao.log</file>
+		<append>true</append>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/dao.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36}\(%L\) - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="serviceAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PATH}/service.log</file>
+		<append>true</append>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/service.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36}\(%L\) - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="controllerAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PATH}/controller.log</file>
+		<append>true</append>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/controller.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36}\(%L\) - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	
+	<logger name="com.xms.usercenter.controller" level="INFO" additivity="false">
+		<appender-ref ref="controllerAppender" />
+	</logger>
+
+	<logger name="com.xms.usercenter.service" level="INFO" additivity="false">
+		<appender-ref ref="serviceAppender" />
+	</logger>
+
+	<logger name="com.xms.usercenter.dao" level="INFO" additivity="false">
+		<appender-ref ref="daoAppender" />
+	</logger>
+
+	<!-- TRACE是为了打出所有访问数据库的信息 -->
+	<logger name="com.xms.usercenter.mapper" level="TRACE" additivity="false">
+		<appender-ref ref="mapperAppender" />
+	</logger>
+
+	<!-- 日志输出级别, 生产上是rootAppender-->
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration> 
