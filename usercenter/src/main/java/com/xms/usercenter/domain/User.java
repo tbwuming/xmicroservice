@@ -4,6 +4,8 @@ import java.util.Date;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import com.xms.domain.BaseDO;
+
 public class User extends BaseDO {
 	private static final long serialVersionUID = 4100424364780330747L;
 

@@ -15,18 +15,22 @@ public class UserDaoImpl implements UserDao {
 	@Autowired
 	private UserMapper userMapper;
 
+	@Override
 	public User getUserById(Long id) {
 		return userMapper.selectUserById(id);
 	}
 
+	@Override
 	public List<User> getUserByName(String name) {
 		return userMapper.selectUserByName(name);
 	}
 
+	@Override
 	public int addUser(User user) {
 		return userMapper.insertUser(user);
 	}
 
+	@Override
 	public int updateUser(User user) {
 		return userMapper.updateUser(user);
 	}

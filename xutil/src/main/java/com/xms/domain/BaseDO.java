@@ -1,4 +1,4 @@
-package com.xms.usercenter.domain;
+package com.xms.domain;
 
 import java.io.Serializable;
 import java.util.Date;
