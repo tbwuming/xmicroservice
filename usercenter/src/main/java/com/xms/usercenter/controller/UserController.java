@@ -56,7 +56,7 @@ public class UserController {
 			logger.error("getUserByName error, name={}", name, e);
 		}
 
-		logger.info("getUserById success, name={}, size={}", name, userList == null ? 0 : userList.size());
+		logger.info("getUserByName success, name={}, size={}", name, userList == null ? 0 : userList.size());
 
 		ResultDO<List<User>> result = new ResultDO<List<User>>(userList);
 		return result;
