@@ -23,7 +23,7 @@
 
 	<update id="updateUser">
 		update User set
-			gmt_modified = #{gmtModified}
+			gmt_modified = now()
 			<if test="name != null">,name = #{name}</if>
 			<if test="age != null">,age = #{age}</if>
 			<if test="address != null">,address = #{address}</if>

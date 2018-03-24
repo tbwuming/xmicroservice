@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.xms.domain.ResultDO;
 import com.xms.usercenter.domain.User;
 import com.xms.usercenter.service.UserService;
 
@@ -23,7 +24,7 @@ public class UserController {
 	private UserService userService;
 
 	/**
-	 * http://localhost:8081/xms/users/5
+	 * http://localhost:8081/xms/v1/users/5
 	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public User getUserById(@PathVariable Long id) {
@@ -31,30 +32,44 @@ public class UserController {
 	}
 
 	/**
-	 * http://localhost:8081/xms/users/name/xxoo
+	 * http://localhost:8081/xms/v1/users/name/xxoo
 	 */
 	@RequestMapping(value = "/name/{name}", method = RequestMethod.GET)
 	public List<User> getUserByName(@PathVariable String name) {
 		return userService.getUserByName(name);
 	}
 
+	/**
+	 * http://localhost:8081/xms/v1/users/
+	 */
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public String addUser(@RequestBody User user) {
+	public ResultDO<User> addUser(@RequestBody User user) {
+		ResultDO<User> result = null;
 		int ret = userService.addUser(user);
 		if (ret > 0) {
-			return "success";
+			result = new ResultDO<User>(user);
+		} else {
+			result = new ResultDO<User>(1001, "add user failure");
 		}
 
-		return "failure";
+		return result;
 	}
-	
-	@RequestMapping(value="/{id}", method = RequestMethod.PUT)
-	public String updateUser(@PathVariable Long id, @RequestBody User user) {
+
+	/**
+	 * http://localhost:8081/xms/v1/users/10
+	 */
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	public ResultDO<User> updateUser(@PathVariable Long id, @RequestBody User user) {
+		user.setId(id);	// 有可能json串生成的user里没有id值
+		
+		ResultDO<User> result = null;
 		int ret = userService.updateUser(user);
 		if (ret > 0) {
-			return "success";
+			result = new ResultDO<User>(user);
+		} else {
+			result = new ResultDO<User>(1001, "update user failure");
 		}
 
-		return "failure";
+		return result;
 	}
 }
