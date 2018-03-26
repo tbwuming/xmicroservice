@@ -18,7 +18,8 @@ spring:
       # 数据库连接信息
       url: jdbc:mysql://127.0.0.1:3306/xmicroservice?zeroDateTimeBehavior=convertToNull&useSSL=false
       username: root
-      password: rootroot
+      #password: rootroot
+      password: ENC(KGt5P4Z2OqNG0gTK7wHQPR6vm1KTmr4b)
       driver-class-name: com.mysql.jdbc.Driver
       # 线程池初始化大小, 最小, 最大 , 获取连接等待超时的时间，单位毫秒
       initial-size: 4
@@ -50,6 +51,9 @@ logging:
   config: classpath:logback-spring.xml
   path: E:/project/eclipse-workspace/xmicroservice/usercenter/logs
 
-
+# 加密的salt
+jasypt:
+  encryptor:
+    password: 123456
 
     
