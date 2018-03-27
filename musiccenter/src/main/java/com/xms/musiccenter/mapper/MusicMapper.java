@@ -2,7 +2,7 @@ package com.xms.musiccenter.mapper;
 
 import java.util.List;
 
-import com.xms.musiccenter.domain.Music;
+import com.xms.domain.Music;
 
 public interface MusicMapper {
 

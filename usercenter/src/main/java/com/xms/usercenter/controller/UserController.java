@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.xms.domain.ResultDO;
-import com.xms.usercenter.domain.User;
+import com.xms.domain.User;
 import com.xms.usercenter.service.UserService;
 
 /**
@@ -111,4 +111,5 @@ public class UserController {
 
 		return result;
 	}
+	
 }

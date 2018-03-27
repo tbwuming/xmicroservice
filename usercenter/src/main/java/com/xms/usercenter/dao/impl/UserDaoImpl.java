@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.xms.domain.User;
 import com.xms.usercenter.dao.UserDao;
-import com.xms.usercenter.domain.User;
 import com.xms.usercenter.mapper.UserMapper;
 
 @Repository

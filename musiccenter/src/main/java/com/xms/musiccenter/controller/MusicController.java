@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.xms.domain.Music;
 import com.xms.domain.ResultDO;
-import com.xms.musiccenter.domain.Music;
 import com.xms.musiccenter.service.MusicService;
 
 /**

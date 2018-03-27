@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.xms.domain.Music;
 import com.xms.musiccenter.dao.MusicDao;
-import com.xms.musiccenter.domain.Music;
 import com.xms.musiccenter.mapper.MusicMapper;
 
 @Repository

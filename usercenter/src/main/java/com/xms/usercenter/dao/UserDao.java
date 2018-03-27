@@ -2,7 +2,7 @@ package com.xms.usercenter.dao;
 
 import java.util.List;
 
-import com.xms.usercenter.domain.User;
+import com.xms.domain.User;
 
 public interface UserDao {
 

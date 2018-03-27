@@ -2,7 +2,7 @@ package com.xms.usercenter.service;
 
 import java.util.List;
 
-import com.xms.usercenter.domain.User;
+import com.xms.domain.User;
 
 public interface UserService {
 
